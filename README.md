@@ -35,7 +35,7 @@ cpd_john_calls=TabularCPD(variable='JohnCalls',variable_card=2,values=[[0.95,0.1
 cpd_marry_calls=TabularCPD(variable='MarryCalls',variable_card=2,values=[[0.99,0.3],[0.01,0.7]],evidence=['Alarm'],evidence_card=[2])
 network.add_cpds(cpd_burglary,cpd_earthquake,cpd_alarm,cpd_john_calls,cpd_marry_calls)
 inference=VariableElimination(network)
-evidence={'JohnCalls':1,'MarryCalls':0}
+evidence={'JohnCalls':1,'MarryCalls':0} 
 query_variable='Burglary'
 result=inference.query(variables=[query_variable],evidence=evidence)
 print(result)
